@@ -1,0 +1,31 @@
+1. GIT INIT: add files - add, commit and push to a new REPO
+
+2. git checkout -b develop: Create a DEVELOP branch
+Add Files/Changes to DEVELOP branch.
+
+3. git push origin develop: Pushes to the develop branch.
+
+4. git checkout [branchName] - Switches between branches.
+
+5. git checkout -b feature/featureName: creates branch for features.
+
+6. ADD AND COMMIT OFTEN
+
+7. git push origin feature/featureName - pushes the branch.
+
+8. git checkout develop: switch back to develop.
+
+9. git pull origin develop: Pulls down the most up to date develop branch. WILL HIGHLIGHT IF DEVELOP HAS CHANGES WHICH ARE NOTE REFLECTED IN FEATURES.
+
+10. git checkout feature/featureName - switch back to feature branch.
+
+11. git merge develop: merges feature branch to updated develop branch
+
+12. git push origin feature/featureName: updates repo of features branch IF CHANGES WERE MADE
+Merging Feature into Develop
+Now want to merge our feature into develop:
+
+Checkout develop - git checkout develop.
+Do a pull on develop just to double check no new changes have been made in the meantime - git pull origin develop and as long as there haven't been...
+Merge feature/add_story into develop - git merge feature/add_story
+Push to develop - we now know that the local and remote are the same in develop and our feature branch has been merged.
