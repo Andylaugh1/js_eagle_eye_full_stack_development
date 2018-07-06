@@ -4,13 +4,14 @@ const path = require('path');
 const parser = require('body-parser');
 const MongoClient = require('mongodb').MongoClient;
 const createRouter = require('./helpers/create_router.js');
+const fetch = require('node-fetch');
 
-MongoClient.connect('mongodb://localhost:27017', (err, client) => {
-const db = client.db("drone_strikes_app");
-const droneStrikes = db.collection('drone_strikes_db');
-const droneStrikesRouter = createRouter(droneStrikes);
-app.use('/api/drone_strikes_db', droneStrikesRouter);
-});
+// MongoClient.connect('mongodb://localhost:27017', (err, client) => {
+// const db = client.db("drone_strikes_app");
+// const droneStrikes = db.collection('drone_strikes_db');
+// const droneStrikesRouter = createRouter(droneStrikes);
+// app.use('/api/drone_strikes_db', droneStrikesRouter);
+// });
 
 const publicPath = path.join(__dirname, '../client/public');
 app.use(express.static(publicPath));
@@ -19,4 +20,12 @@ app.use(parser.json());
 
 app.listen(3000, function(){
   console.log(`listening on port ${ this.address().port}`);
+});
+
+app.get('/api/drones', (req, res) => {
+  const url = 'https://api.dronestre.am/data';
+
+  fetch(url)
+    .then(jsonData => jsonData.json())
+    .then(data => res.json(data)); // MODIFIED
 });

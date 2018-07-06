@@ -11,5 +11,6 @@ const createRouter = function(collection) {
     .toArray()
     .then((docs) => res.json(docs));
   });
+};
 
   module.exports = createRouter;
