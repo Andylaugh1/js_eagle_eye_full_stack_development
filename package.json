@@ -1,0 +1,32 @@
+{
+  "name": "js_eagle_eye_full_stack_development",
+  "version": "1.0.0",
+  "description": "Educational App- Project Brief The BBC are looking to improve their online offering of educational content by developing some interactive apps that display information in a fun and interesting way. Your task is to make an MVP to put forward to them - this may only be for a small set of information, and may only showcase some of the features to be included in the final app. You might use an API to bring in content or a database to store facts.",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server:dev": "nodemon server/server.js",
+    "build": "webpack -w",
+    "start": "node server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Andylaugh1/js_eagle_eye_full_stack_development.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Andylaugh1/js_eagle_eye_full_stack_development/issues"
+  },
+  "homepage": "https://github.com/Andylaugh1/js_eagle_eye_full_stack_development#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "webpack": "^4.15.1",
+    "webpack-cli": "^3.0.8"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.5"
+  }
+}
