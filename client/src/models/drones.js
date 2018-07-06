@@ -9,6 +9,7 @@ Drones.prototype.getData = function () {
   const request = new Request('https://api.dronestre.am/data')
   request.get((data) =>{
     PubSub.publish('Drones:drones-ready', data);
+    console.log(data);
   })
 
 
@@ -16,4 +17,4 @@ Drones.prototype.getData = function () {
 
 
 
-module.export = Drones;
+module.exports = Drones;

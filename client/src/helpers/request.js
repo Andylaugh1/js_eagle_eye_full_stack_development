@@ -7,4 +7,4 @@ Request.prototype.get = function () {
  .then((response)=> response.json());
 };
 
-module.exports = Request:
+module.exports = Request;
