@@ -7,13 +7,17 @@ const Drones = function (url) {
 };
 
 Drones.prototype.getData = function () {
-    const request = new Request(this.url);
-    request.get()
-      .then((data) => {
-        PubSub.publish('Drones:data-loaded', games);
-      })
-      .catch(console.error);
+  const url = this.url;
+  const request = new Request(url);
+  const handleRequest = (responseData) => {
+    this.dronesData = responseData;
+    PubSub.publish('Drones:data-ready', this.dronesData);
+    console.log(this.dronesData);
+  }
 
+  request.get()
+    .then(handleRequest)
+    .catch(error => console.error(error));
 };
 
 
