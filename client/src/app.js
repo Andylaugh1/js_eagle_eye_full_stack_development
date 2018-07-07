@@ -11,7 +11,8 @@ const drones = new Drones(dronesUrl);
 drones.getData();
 
 const strikesContainer = document.querySelector('div#strikes-countries');
-const globeView = new GlobeView(strikesContainer);
+const mapContainer = document.querySelector('div#mapid');
+const globeView = new GlobeView(strikesContainer, mapContainer);
 globeView.bindEvents();
 
 // const mapContainer = document.querySelector('div#mapid')
