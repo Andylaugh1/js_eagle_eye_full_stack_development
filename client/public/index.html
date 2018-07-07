@@ -16,17 +16,17 @@
     <h1>Covert Drone Strikes</h1>
 
     <div id="mapid"></div>
-    <script>
-      var mymap = L.map('mapid').setView([25, 56.4], 4.5);
-      var marker = L.marker([25, 56]).addTo(mymap);
-
-      L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-        maxZoom: 18,
-        id: 'mapbox.emerald',
-        accessToken: 'pk.eyJ1IjoiYXQtbGF1Z2hsaW4iLCJhIjoiY2pqYjhjc2VkM21uaDNxbzR2aGh3Ynh5ciJ9.N4uJndedEpzsbVCwTCNnJw'
-    }).addTo(mymap);
-    </script>
+    <!-- <script>
+    //   var mymap = L.map('mapid').setView([25, 56.4], 4.5);
+    //   var marker = L.marker([25, 56]).addTo(mymap);
+    //
+    //   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+    //     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    //     maxZoom: 18,
+    //     id: 'mapbox.emerald',
+    //     accessToken: 'pk.eyJ1IjoiYXQtbGF1Z2hsaW4iLCJhIjoiY2pqYjhjc2VkM21uaDNxbzR2aGh3Ynh5ciJ9.N4uJndedEpzsbVCwTCNnJw'
+    // }).addTo(mymap);
+    // </script> -->
     <div id="strikes-countries"></div>
   </body>
 </html>
