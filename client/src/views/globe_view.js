@@ -3,35 +3,31 @@ const PubSub = require('../helpers/pub_sub.js');
 const Drones = require('../models/drones.js');
 
 
-const GlobeView = function(container, container2){
-  this.container = container;
+const GlobeView = function(container2){
   this.container2 = container2;
 }
 
 GlobeView.prototype.bindEvents = function () {
   PubSub.subscribe('Drones:data-ready', (evt) =>{
     droneData = evt.detail;
-    // this.render(droneData);
     this.mapRender(droneData);
   });
+
+  this.container2.addEventListener('click', (evt) => {
+    const selectedIndex = evt.detail;
+    console.log(selectedIndex);
+    PubSub.publish('Drones:selected-strike', selectedIndex);
+  })
 };
 
-
-// GlobeView.prototype.render = function (droneData) {
-//   droneData.strike.forEach((drone, index) => {
-//     const strike = document.createElement('p');
-//     strike.value = index;
-//     var lat = drone.lat;
-//     var lon = drone.lon;
-//   });
-
-// };
-
+// MARKERS NOT PICKING UP DRONE DATA - TOMORROWS PROBLEMS
 GlobeView.prototype.mapRender = function (droneData) {
 
   var mymap = L.map(this.container2).setView([16.9, 55.76], 4.5);
   droneData.strike.forEach((drone, index) => {
-    L.marker([drone.lat, drone.lon]).addTo(mymap);
+    var marker = L.marker([drone.lat, drone.lon]).addTo(mymap);
+    console.log(drone);
+    return drone;
   })
 
   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
@@ -43,6 +39,14 @@ GlobeView.prototype.mapRender = function (droneData) {
   })
   .addTo(mymap);
 };
+
+GlobeView.prototype.markerClicked = function () {
+
+  document.addEventListener
+
+};
+
+
 
 
 module.exports = GlobeView;

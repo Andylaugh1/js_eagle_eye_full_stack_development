@@ -10,9 +10,8 @@ const dronesUrl ='http://localhost:3000/api/drones'
 const drones = new Drones(dronesUrl);
 drones.getData();
 
-const strikesContainer = document.querySelector('div#strikes-countries');
 const mapContainer = document.querySelector('div#mapid');
-const globeView = new GlobeView(strikesContainer, mapContainer);
+const globeView = new GlobeView(mapContainer);
 globeView.bindEvents();
 
 // const mapContainer = document.querySelector('div#mapid')

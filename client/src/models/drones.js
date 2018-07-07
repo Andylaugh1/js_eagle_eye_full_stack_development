@@ -6,6 +6,14 @@ const Drones = function (url) {
   this.dronesData = [];
 };
 
+Drones.prototype.bindEvents = function () {
+  PubSub.subscribe('Drones:selected-strike', (event) => {
+    const strikeData = event.detail;
+    console.log(strikeData);
+  });
+
+};
+
 Drones.prototype.getData = function () {
   const url = this.url;
   const request = new Request(url);
