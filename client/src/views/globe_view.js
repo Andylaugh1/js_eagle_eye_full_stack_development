@@ -15,7 +15,6 @@ GlobeView.prototype.bindEvents = function () {
   });
 };
 
-// MARKERS NOT PICKING UP DRONE DATA - TOMORROWS PROBLEMS
 GlobeView.prototype.mapRender = function (droneData) {
 
   var mymap = L.map(this.container2).setView([16.9, 55.76], 4.5);
@@ -23,7 +22,6 @@ GlobeView.prototype.mapRender = function (droneData) {
     var marker = L.marker([drone.lat, drone.lon], {droneInfo: drone}).addTo(mymap)
     .on('click', (event) => {
         const selectedIndex = event.target.options.droneInfo;
-        console.log(selectedIndex);
         PubSub.publish('Drones:selected-strike', selectedIndex);
     });
 });
@@ -37,10 +35,5 @@ GlobeView.prototype.mapRender = function (droneData) {
   })
   .addTo(mymap);
 };
-
-
-
-
-
 
 module.exports = GlobeView;
