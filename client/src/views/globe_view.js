@@ -13,9 +13,8 @@ GlobeView.prototype.bindEvents = function () {
     this.mapRender(droneData);
   });
 
-  this.container2.addEventListener('click', (evt) => {
-    const selectedIndex = evt.detail;
-    console.log(selectedIndex);
+  this.container2.addEventListener('click', (event) => {
+    const selectedIndex = event.target.value;
     PubSub.publish('Drones:selected-strike', selectedIndex);
   })
 };
@@ -25,10 +24,8 @@ GlobeView.prototype.mapRender = function (droneData) {
 
   var mymap = L.map(this.container2).setView([16.9, 55.76], 4.5);
   droneData.strike.forEach((drone, index) => {
-    var marker = L.marker([drone.lat, drone.lon]).addTo(mymap);
-    console.log(drone);
-    return drone;
-  })
+    var marker = L.marker([drone.lat, drone.lon], {droneInfo: drone}).addTo(mymap);
+});
 
   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
     attribution:
@@ -40,11 +37,7 @@ GlobeView.prototype.mapRender = function (droneData) {
   .addTo(mymap);
 };
 
-GlobeView.prototype.markerClicked = function () {
 
-  document.addEventListener
-
-};
 
 
 

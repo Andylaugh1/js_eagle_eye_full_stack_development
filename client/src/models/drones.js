@@ -8,7 +8,7 @@ const Drones = function (url) {
 
 Drones.prototype.bindEvents = function () {
   PubSub.subscribe('Drones:selected-strike', (event) => {
-    const strikeData = event.detail;
+    const strikeData = this.dronesData[event.detail];
     console.log(strikeData);
   });
 
