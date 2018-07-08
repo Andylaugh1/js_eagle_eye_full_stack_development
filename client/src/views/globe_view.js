@@ -13,11 +13,6 @@ GlobeView.prototype.bindEvents = function () {
     // console.log(evt.detail);
     this.mapRender(droneData);
   });
-
-  // this.container2.addEventListener('click', (event) => {
-  //   const selectedIndex = event.target.value;
-  //   PubSub.publish('Drones:selected-strike', selectedIndex);
-  // })
 };
 
 // MARKERS NOT PICKING UP DRONE DATA - TOMORROWS PROBLEMS
