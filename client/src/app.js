@@ -12,6 +12,7 @@ drones.getData();
 
 
 const mapContainer = document.querySelector('div#mapid');
+
 const globeView = new GlobeView(mapContainer);
 globeView.bindEvents();
 
