@@ -7,12 +7,14 @@ const DroneView = function (container) {
 
 DroneView.prototype.bindEvents = function () {
     PubSub.subscribe('Drones:selected-strike', (droneData) => {
-        this.render(droneData);
+    this.render(droneData);
     })
-
 };
 
-
+// DroneView.prototype.populateSidebar = function () {
+//    const sidebarContent
+//
+// };
 
 DroneView.prototype.render = function (droneData) {
   this.container.innerHTML = " ";
