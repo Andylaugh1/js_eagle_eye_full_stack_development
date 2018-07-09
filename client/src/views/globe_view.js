@@ -19,15 +19,15 @@ GlobeView.prototype.bindEvents = function () {
 
 GlobeView.prototype.mapRender = function (droneData) {
 
-  var droneTargetIcon = L.icon({
-    iconUrl: '/images/target.png',
-
-     iconSize: [30, 30]
-  });
+  // var droneTargetIcon = L.icon({
+  //   iconUrl: '/images/dot-inside-a-circle.png',
+  //
+  //    iconSize: [5, 5]
+  // });
 
   var myMap = L.map(this.container2).setView([20, 55], 3.5);
   droneData.strike.forEach((drone, index) => {
-    var marker = L.marker([drone.lat, drone.lon], {droneInfo: drone, icon: droneTargetIcon}).addTo(myMap)
+    var marker = L.marker([drone.lat, drone.lon], {droneInfo: drone}).addTo(myMap)
     .on('click', (event) => {
       const selectedIndex = event.target.options.droneInfo;
       PubSub.publish('Drones:selected-strike', selectedIndex);
