@@ -14,8 +14,8 @@ CountryInfoView.prototype.bindEvents = function () {
 
 CountryInfoView.prototype.render = function (countryData) {
   this.container.innerHTML = " ";
-  const conflictDetails =  document.createElement('h1')
-  const country = document.createElement('h2');
+  const conflictDetails =  document.createElement('h2')
+  const country = document.createElement('h3');
   const info = document.createElement('p');
 
   conflictDetails.textContent = "Conflict History"
@@ -35,7 +35,8 @@ CountryInfoView.prototype.getSelectedCountryInfo = function (countryData) {
     US drone strikes in Yemen are a key part of the campaign against al-Qaida in the Arabian Peninsula (AQAP)
 
     Airstrikes have also increased in Yemen, where the US campaign against Islamists has played out alongside a tangled civil war, which has already drawn in regional rivals Saudi Arabia and Iran.`
-  } else if (countryData.detail.country === "Pakistan") {
+  }
+  else if (countryData.detail.country === "Pakistan") {
     data = `The Haqqani network, affiliated with the Taliban and designated as a terrorist group by the United States, has carried out numerous deadly attacks in Afghanistan in recent years. The presence of its leaders and militants in Pakistan and its links with the country’s military intelligence agency have long caused friction between United States and Pakistan.
 
     The Kurram region has been used frequently by Haqqani network fighters to cross into neighbouring Afghanistan.
