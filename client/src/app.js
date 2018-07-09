@@ -12,10 +12,11 @@ drones.getData();
 
 
 const mapContainer = document.querySelector('div#mapid');
-const globeView = new GlobeView(mapContainer);
+const sideBar = document.querySelector('div#sidebar');
+const globeView = new GlobeView(sideBar, mapContainer);
 globeView.bindEvents();
 
-const detailContainer = document.querySelector('div#strike-detail');
+const detailContainer = document.querySelector('div#strikes-data');
 const droneView = new DroneView(detailContainer);
 droneView.bindEvents();
 
