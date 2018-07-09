@@ -17,7 +17,7 @@ GlobeView.prototype.bindEvents = function () {
 
 GlobeView.prototype.mapRender = function (droneData) {
 
-  var mymap = L.map(this.container2).setView([16.9, 55.76], 4.5);
+  var mymap = L.map(this.container2).setView([20, 55], 3.5);
   droneData.strike.forEach((drone, index) => {
     var marker = L.marker([drone.lat, drone.lon], {droneInfo: drone}).addTo(mymap)
     .on('click', (event) => {
@@ -30,7 +30,7 @@ GlobeView.prototype.mapRender = function (droneData) {
     attribution:
     'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 18,
-    id: 'mapbox.emerald',
+    id: 'mapbox.light',
     accessToken: 'pk.eyJ1IjoiYXQtbGF1Z2hsaW4iLCJhIjoiY2pqYjhjc2VkM21uaDNxbzR2aGh3Ynh5ciJ9.N4uJndedEpzsbVCwTCNnJw'
   })
   .addTo(mymap);
