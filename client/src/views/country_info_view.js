@@ -14,14 +14,16 @@ CountryInfoView.prototype.bindEvents = function () {
 
 CountryInfoView.prototype.render = function (countryData) {
   this.container.innerHTML = " ";
-  const country = document.createElement('h1');
-  const town = document.createElement('p');
+  const conflictDetails =  document.createElement('h1')
+  const country = document.createElement('h2');
   const info = document.createElement('p');
+
+  conflictDetails.textContent = "Conflict History"
   country.textContent = countryData.detail.country;
-  town.textContent = countryData.detail.town;
   info.textContent = this.getSelectedCountryInfo(countryData);
+
+  this.container.appendChild(conflictDetails)
   this.container.appendChild(country);
-  this.container.appendChild(town);
   this.container.appendChild(info);
 };
 
@@ -37,8 +39,12 @@ CountryInfoView.prototype.getSelectedCountryInfo = function (countryData) {
     data = `The Haqqani network, affiliated with the Taliban and designated as a terrorist group by the United States, has carried out numerous deadly attacks in Afghanistan in recent years. The presence of its leaders and militants in Pakistan and its links with the country’s military intelligence agency have long caused friction between United States and Pakistan.
 
     The Kurram region has been used frequently by Haqqani network fighters to cross into neighbouring Afghanistan.
-    Hence the US has been targeting these network fighters, within Pakistani regions.` }
-    
+    Hence the US has been targeting these network fighters, within Pakistani regions.`
+  }
+  else if (countryData.detail.country === "Somalia") {
+    data = `Yadadadadada`
+  }
+
     return data;
   };
 
