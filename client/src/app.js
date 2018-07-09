@@ -1,6 +1,7 @@
 const Drones = require('./models/drones.js');
 const GlobeView = require('./views/globe_view.js');
 const DroneView = require("./views/drone_view.js");
+const GeneralInfoView = require("./views/general_info_view.js");
 
 
 document.addEventListener('DOMContentLoaded', ()=> {
@@ -20,4 +21,7 @@ const detailContainer = document.querySelector('div#sidebar');
 const droneView = new DroneView(detailContainer);
 droneView.bindEvents();
 
+const generalContainer = document.querySelector('div#general-info');
+const generalInfoView = new GeneralInfoView(generalContainer);
+generalInfoView.bindEvents();
 })
