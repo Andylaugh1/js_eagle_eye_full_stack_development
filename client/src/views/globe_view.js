@@ -19,11 +19,6 @@ GlobeView.prototype.bindEvents = function () {
 
 GlobeView.prototype.mapRender = function (droneData) {
 
-  // var droneTargetIcon = L.icon({
-  //   iconUrl: '/images/dot-inside-a-circle.png',
-  //
-  //    iconSize: [5, 5]
-  // });
 
   var myMap = L.map(this.container2).setView([20, 55], 3.5);
   droneData.strike.forEach((drone, index) => {
