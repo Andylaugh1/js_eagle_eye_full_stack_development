@@ -11,9 +11,26 @@ DroneView.prototype.bindEvents = function () {
     })
 
 };
+
+
+
 DroneView.prototype.render = function (droneData) {
-    const strikeCountry = document.createElement('p');
-    strikeCountry.textContent = droneData.detail.country;
-    this.container.appendChild(strikeCountry);
+  this.container.innerHTML = " ";
+    const strikeTown = document.createElement('p');
+    const strikeDate = document.createElement('p');
+    const strikeNarrative = document.createElement('p');
+    const strikeDeaths = document.createElement('p');
+    const strikeInjuries = document.createElement('p');
+    const strikeSummary = document.createElement('p');
+    strikeTown.textContent = "Town : " + droneData.detail.town;
+    strikeDate.textContent = "Date : " + droneData.detail.date;
+    strikeDeaths.textContent = "Total Deaths : " + droneData.detail.deaths;
+    strikeInjuries.textContent = "Total Injuries : " + droneData.detail.injuries;
+    strikeSummary.textContent = droneData.detail.bij_summary_short;
+    this.container.appendChild(strikeTown);
+    this.container.appendChild(strikeDate);
+    this.container.appendChild(strikeDeaths);
+    this.container.appendChild(strikeInjuries);
+    this.container.appendChild(strikeSummary);
 };
 module.exports = DroneView;

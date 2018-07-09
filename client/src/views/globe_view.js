@@ -19,16 +19,24 @@ GlobeView.prototype.bindEvents = function () {
 
 GlobeView.prototype.mapRender = function (droneData) {
 
+<<<<<<< HEAD
   var mymap = L.map(this.container2).setView([20, 55], 3.5);
 
+=======
+  var myMap = L.map(this.container2).setView([20, 55], 3.5);
+>>>>>>> feature/sidebar
   droneData.strike.forEach((drone, index) => {
-    var marker = L.marker([drone.lat, drone.lon], {droneInfo: drone}).addTo(mymap)
+    var marker = L.marker([drone.lat, drone.lon], {droneInfo: drone}).addTo(myMap)
     .on('click', (event) => {
-        const selectedIndex = event.target.options.droneInfo;
-        PubSub.publish('Drones:selected-strike', selectedIndex);
+      const selectedIndex = event.target.options.droneInfo;
+      PubSub.publish('Drones:selected-strike', selectedIndex);
     });
+<<<<<<< HEAD
 
 });
+=======
+  });
+>>>>>>> feature/sidebar
 
   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
     attribution:
@@ -37,6 +45,7 @@ GlobeView.prototype.mapRender = function (droneData) {
     id: 'mapbox.light',
     accessToken: 'pk.eyJ1IjoiYXQtbGF1Z2hsaW4iLCJhIjoiY2pqYjhjc2VkM21uaDNxbzR2aGh3Ynh5ciJ9.N4uJndedEpzsbVCwTCNnJw'
   })
+<<<<<<< HEAD
   .addTo(mymap);
 
   var sidebar = L.control.sidebar(this.container, {
@@ -47,6 +56,15 @@ GlobeView.prototype.mapRender = function (droneData) {
   mymap.addControl(sidebar);
   sidebar.show()
   sidebar.setContent("A String")
+=======
+  .addTo(myMap);
+  //
+  // var sidebar = L.control.sidebar('sidebar', {
+  //   position: 'left'
+  // });
+  // myMap.addControl(sidebar);
+  // sidebar.show();
+>>>>>>> feature/sidebar
 };
 
 
