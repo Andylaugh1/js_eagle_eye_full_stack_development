@@ -15,7 +15,7 @@ const mapContainer = document.querySelector('div#mapid');
 const globeView = new GlobeView(mapContainer);
 globeView.bindEvents();
 
-const detailContainer = document.querySelector('div#strike-detail');
+const detailContainer = document.querySelector('div#sidebar');
 const droneView = new DroneView(detailContainer);
 droneView.bindEvents();
 
