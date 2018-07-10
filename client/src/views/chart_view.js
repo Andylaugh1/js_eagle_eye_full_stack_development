@@ -13,18 +13,18 @@ ChartView.prototype.render = function () {
             type: 'bar'
         },
         title: {
-            text: 'Victims of US Drone Strikes'
+            text: 'Recorded Deaths of US Drone Strikes in Pakistan, Somalia and Yemen'
         },
         xAxis: {
-            categories: ['minDeaths', 'maxDeaths', 'Injuries']
+            categories: ['Average Combatants' , ' Civilian', 'Children']
         },
         yAxis: {
             title: {
-                text: 'Human Cost'
+                text: 'Recorded Deaths'
             }
         },
         series: [{
-            data: [1000, 555,  888]
+            data: [4032, 598, 187 ]
         }]
     });
 };
