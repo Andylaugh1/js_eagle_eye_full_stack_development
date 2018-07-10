@@ -1,32 +1,30 @@
 const PubSub = require('../helpers/pub_sub.js')
 const Highcharts = require('highcharts');
+const CalculationsView = require('./calculations_view.js')
 
 const ChartView = function (chartContainer) {
     this.chartContainer = chartContainer
 }
 ChartView.prototype.render = function () {
 
+
     Highcharts.chart(this.chartContainer, {
         chart: {
             type: 'bar'
         },
         title: {
-            text: 'Fruit Consumption'
+            text: 'Victims of US Drone Strikes'
         },
         xAxis: {
-            categories: ['Apples', 'Bananas', 'Oranges']
+            categories: ['minDeaths', 'maxDeaths', 'Injuries']
         },
         yAxis: {
             title: {
-                text: 'Fruit eaten'
+                text: 'Human Cost'
             }
         },
         series: [{
-            name: 'Jane',
-            data: [1, 0, 4]
-        }, {
-            name: 'John',
-            data: [5, 7, 3]
+            data: [1000, 555,  888]
         }]
     });
 };
