@@ -31,7 +31,6 @@ CalculationsView.prototype.maxDeaths = function (dronesData) {
   dronesData.forEach((drone) => {
     if ( ! isNaN(parseInt(drone.deaths_max))){
       maxDeaths += parseInt(drone.deaths_max)
-    console.log(maxDeaths);
   }
 })
   return parseInt(maxDeaths);
