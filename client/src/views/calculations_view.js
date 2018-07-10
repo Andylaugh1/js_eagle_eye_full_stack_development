@@ -8,26 +8,43 @@ const CalculationsView = function (container) {
 
 CalculationsView.prototype.bindEvents = function () {
   PubSub.subscribe('Drones:data-ready', (evt) => {
+
     initialData = evt.detail;
     dronesData = initialData.strike;
-    this.totalDeaths(dronesData);
-    this.minDeaths(dronesData);
-    this.maxDeaths(dronesData);
-    this.injuriesTotal(dronesData);
-    this.civilianDeaths(dronesData);
-    this.childrenDeaths(dronesData);
+
+    this.render();
+
   })
 };
 
+CalculationsView.prototype.render = function () {
+  const minDeaths = document.createElement('p');
+  const maxDeaths = document.createElement('p');
+  const injuriesTotal = document.createElement('p');
+  const civilianDeaths = document.createElement('p');
+  const childrenDeaths = document.createElement('p');
+
+  maxDeaths.textContent = 'Max Deaths : ' + this.maxDeaths(dronesData);
+  minDeaths.textContent = 'Min Deaths : ' + this.minDeaths(dronesData);
+  injuriesTotal.textContent = 'Recorded Injuries : ' + this.injuriesTotal(dronesData);
+  civilianDeaths.textContent = 'Recorded Civilian Deaths : ' + this.civilianDeaths(dronesData);
+  childrenDeaths.textContent = 'Recorded Child Deaths : ' + this.childrenDeaths(dronesData);
+
+  this.container.appendChild(maxDeaths);
+  this.container.appendChild(minDeaths);
+  this.container.appendChild(civilianDeaths);
+  this.container.appendChild(injuriesTotal);
+  this.container.appendChild(childrenDeaths);
+};
 
 CalculationsView.prototype.totalDeaths = function (dronesData) {
   let totalDeaths = 0;
   dronesData.forEach((drone) => {
     if ( ! isNaN(parseInt(drone.deaths))){
       totalDeaths += parseInt(drone.deaths)
-  }
-})
-console.log(totalDeaths);
+    }
+  })
+  console.log(`total:${totalDeaths}`);
   return parseInt(totalDeaths);
 };
 CalculationsView.prototype.minDeaths = function (dronesData) {
@@ -35,9 +52,8 @@ CalculationsView.prototype.minDeaths = function (dronesData) {
   dronesData.forEach((drone) => {
     if ( ! isNaN(parseInt(drone.deaths_min))){
       minDeaths += parseInt(drone.deaths_min)
-  }
-})
-console.log(minDeaths);
+    }
+  })
   return parseInt(minDeaths);
 };
 
@@ -46,9 +62,8 @@ CalculationsView.prototype.maxDeaths = function (dronesData) {
   dronesData.forEach((drone) => {
     if ( ! isNaN(parseInt(drone.deaths_max))){
       maxDeaths += parseInt(drone.deaths_max)
-  }
-})
-console.log(maxDeaths);
+    }
+  })
   return parseInt(maxDeaths);
 
 };
@@ -60,7 +75,6 @@ CalculationsView.prototype.injuriesTotal = function (dronesData) {
       injuriesTotal += parseInt(drone.injuries)
   }
 })
-  console.log(injuriesTotal);
   return parseInt(injuriesTotal);
 };
 
@@ -71,9 +85,7 @@ CalculationsView.prototype.civilianDeaths = function (dronesData) {
       civilianDeaths += parseInt(drone.civilians)
   }
 })
-console.log(civilianDeaths);
   return parseInt(civilianDeaths);
-
 };
 
 CalculationsView.prototype.childrenDeaths = function (dronesData) {
@@ -83,10 +95,10 @@ CalculationsView.prototype.childrenDeaths = function (dronesData) {
       childrenDeaths += parseInt(drone.children)
   }
 })
-console.log(childrenDeaths);
   return parseInt(childrenDeaths);
-
 };
+
+
 
 
 module.exports = CalculationsView;
