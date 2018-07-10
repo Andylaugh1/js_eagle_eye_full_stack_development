@@ -10,13 +10,26 @@ CalculationsView.prototype.bindEvents = function () {
   PubSub.subscribe('Drones:data-ready', (evt) => {
     initialData = evt.detail;
     dronesData = initialData.strike;
+    this.totalDeaths(dronesData);
     this.minDeaths(dronesData);
     this.maxDeaths(dronesData);
     this.injuriesTotal(dronesData);
+    this.civilianDeaths(dronesData);
+    this.childrenDeaths(dronesData);
   })
 };
 
 
+CalculationsView.prototype.totalDeaths = function (dronesData) {
+  let totalDeaths = 0;
+  dronesData.forEach((drone) => {
+    if ( ! isNaN(parseInt(drone.deaths))){
+      totalDeaths += parseInt(drone.deaths)
+  }
+})
+console.log(totalDeaths);
+  return parseInt(totalDeaths);
+};
 CalculationsView.prototype.minDeaths = function (dronesData) {
   let minDeaths = 0;
   dronesData.forEach((drone) => {
@@ -51,6 +64,29 @@ CalculationsView.prototype.injuriesTotal = function (dronesData) {
   return parseInt(injuriesTotal);
 };
 
+CalculationsView.prototype.civilianDeaths = function (dronesData) {
+  let civilianDeaths = 0;
+  dronesData.forEach((drone) => {
+    if ( ! isNaN(parseInt(drone.civilians))){
+      civilianDeaths += parseInt(drone.civilians)
+  }
+})
+console.log(civilianDeaths);
+  return parseInt(civilianDeaths);
+
+};
+
+CalculationsView.prototype.childrenDeaths = function (dronesData) {
+  let childrenDeaths = 0;
+  dronesData.forEach((drone) => {
+    if ( ! isNaN(parseInt(drone.children))){
+      childrenDeaths += parseInt(drone.children)
+  }
+})
+console.log(childrenDeaths);
+  return parseInt(childrenDeaths);
+
+};
 
 
 module.exports = CalculationsView;
