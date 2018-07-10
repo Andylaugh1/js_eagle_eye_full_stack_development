@@ -12,6 +12,7 @@ CalculationsView.prototype.bindEvents = function () {
     dronesData = initialData.strike;
     this.minDeaths(dronesData);
     this.maxDeaths(dronesData);
+    this.injuriesTotal(dronesData);
   })
 };
 
@@ -23,6 +24,7 @@ CalculationsView.prototype.minDeaths = function (dronesData) {
       minDeaths += parseInt(drone.deaths_min)
   }
 })
+console.log(minDeaths);
   return parseInt(minDeaths);
 };
 
@@ -33,7 +35,7 @@ CalculationsView.prototype.maxDeaths = function (dronesData) {
       maxDeaths += parseInt(drone.deaths_max)
   }
 })
-// console.log(maxDeaths);
+console.log(maxDeaths);
   return parseInt(maxDeaths);
 
 };

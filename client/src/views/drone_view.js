@@ -11,10 +11,6 @@ DroneView.prototype.bindEvents = function () {
     })
 };
 
-// DroneView.prototype.populateSidebar = function () {
-//    const sidebarContent
-//
-// };
 
 DroneView.prototype.render = function (droneData) {
   this.container.innerHTML = " ";
