@@ -23,11 +23,14 @@ DroneView.prototype.render = function (droneData) {
     const strikeSummary = document.createElement('p');
 
     heading.textContent = 'Strike Details';
-    strikeTown.textContent = "Town : " + droneData.detail.town;
-    strikeDate.textContent = "Date : " + droneData.detail.date;
-    strikeDeaths.textContent = "Total Deaths : " + droneData.detail.deaths;
-    strikeInjuries.textContent = "Total Injuries : " + droneData.detail.injuries;
-    strikeSummary.textContent = droneData.detail.bij_summary_short;
+   strikeTown.textContent = "Town : " + droneData.detail.town;
+   const strikeDateFormat = droneData.detail.date.split("-");
+   const strikeDay = droneData.detail.date.substring(8, 10);
+   console.log(strikeDay);
+   strikeDate.textContent = "Date : " + strikeDay + '/' + strikeDateFormat[1] + '/' + strikeDateFormat[0];
+   strikeDeaths.textContent = "Total Deaths : " + droneData.detail.deaths;
+   strikeInjuries.textContent = "Total Injuries : " + droneData.detail.injuries;
+   strikeSummary.textContent = droneData.detail.bij_summary_short;
 
     this.container.appendChild(heading);
     this.container.appendChild(strikeTown);

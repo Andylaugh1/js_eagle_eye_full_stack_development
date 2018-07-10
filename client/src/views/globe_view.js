@@ -14,9 +14,29 @@ const GlobeView = function(container, container2){
 GlobeView.prototype.bindEvents = function () {
  PubSub.subscribe('Drones:data-ready', (evt) =>{
    droneData = evt.detail;
+   data = droneData.strike;
+   selectedYear = this.mapSliderFilter(data);
    this.mapRender(droneData.strike);
    this.populateFilter();
  });
+
+ GlobeView.prototype.filterByYear = function (data, selectedYear) {
+ const allFromYear = data.filter((drone) => drone.date.substring(0,4) === selectedYear)
+ return allFromYear;
+};
+
+GlobeView.prototype.mapSliderFilter = function (data) {
+
+ var slider = document.getElementById("myRange");
+ var output = document.getElementById("demo");
+
+slider.oninput = (evt) => {
+ output.innerHTML = evt.target.value;
+ filteredData = this.filterByYear(data, evt.target.value);
+this.renderMarkers(filteredData);
+};
+
+};
 
  this.selectElement.addEventListener('change', (event) => {
    const countryName = event.target.value;
