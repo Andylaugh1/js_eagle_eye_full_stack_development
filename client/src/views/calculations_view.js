@@ -2,6 +2,7 @@ const Drones = require('../models/drones.js')
 const PubSub = require('../helpers/pub_sub.js')
 
 
+
 const CalculationsView = function (container) {
   this.container = container;
 }
@@ -35,6 +36,7 @@ CalculationsView.prototype.render = function () {
   this.container.appendChild(civilianDeaths);
   this.container.appendChild(injuriesTotal);
   this.container.appendChild(childrenDeaths);
+
 };
 
 CalculationsView.prototype.totalDeaths = function (dronesData) {
@@ -99,6 +101,20 @@ CalculationsView.prototype.childrenDeaths = function (dronesData) {
 };
 
 
-
+// const dataToDisplayInChart = {
+//   type: "hbar",
+//   series: [
+//     {
+//       values: [20, 30]
+//     },
+//   ]
+// };
+//
+// zingchart.render({
+//   id: 'myChart',
+//   data: dataToDisplayInChart,
+//   height: '100%',
+//   width: '100%'
+// })
 
 module.exports = CalculationsView;
