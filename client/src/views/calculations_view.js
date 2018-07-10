@@ -10,21 +10,34 @@ CalculationsView.prototype.bindEvents = function () {
   PubSub.subscribe('Drones:data-ready', (evt) => {
     initialData = evt.detail;
     dronesData = initialData.strike;
-    this.totalDeaths(dronesData);
+    this.minDeaths(dronesData);
+    this.maxDeaths(dronesData);
   })
 };
 
 
-CalculationsView.prototype.totalDeaths = function (dronesData) {
-  let totalDeaths = 0;
+CalculationsView.prototype.minDeaths = function (dronesData) {
+  let minDeaths = 0;
   dronesData.forEach((drone) => {
-    if ( ! isNaN(drone.deaths_min)){
-      totalDeaths += parseInt(drone.deaths_min)
-    console.log(totalDeaths);
+    if ( ! isNaN(parseInt(drone.deaths_min))){
+      minDeaths += parseInt(drone.deaths_min)
   }
 })
-  return parseInt(totalDeaths);
-}
+  return parseInt(minDeaths);
+};
+
+CalculationsView.prototype.maxDeaths = function (dronesData) {
+  let maxDeaths = 0;
+  dronesData.forEach((drone) => {
+    if ( ! isNaN(parseInt(drone.deaths_max))){
+      maxDeaths += parseInt(drone.deaths_max)
+    console.log(maxDeaths);
+  }
+})
+  return parseInt(maxDeaths);
+};
+
+
 
 
 module.exports = CalculationsView;

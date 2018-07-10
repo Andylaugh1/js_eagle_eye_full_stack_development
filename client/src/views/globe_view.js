@@ -43,4 +43,6 @@ GlobeView.prototype.mapRender = function (droneData) {
 
 
 
+
+
 module.exports = GlobeView;

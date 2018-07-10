@@ -43,7 +43,12 @@ CountryInfoView.prototype.getSelectedCountryInfo = function (countryData) {
     Hence the US has been targeting these network fighters, within Pakistani regions.`
   }
   else if (countryData.detail.country === "Somalia") {
-    data = `Yadadadadada`
+    data = `Almost all the strikes target al-Shabaab, the al-Qaida affiliated extremist movement fighting to establish an Islamic state in Somalia for more than a decade.
+
+Most airstrikes hit deep into the territory held by Islamist militants and confirmation of claims of civilian casualties, even when made by relatives of those hurt or killed, is difficult. Some of the dead or injured may be fighters with armed tribal militias who are technically civilians, though sometimes align with the militants.
+Michael Keating, the UN special representative in Somalia, said: “All those who are using military means in one way or another [in Somalia] claim that they have standards when it comes to the protection of civilians but are not translating their principles into practice. All actors could do more to protect civilians.”
+
+The strikes have also killed large numbers of livestock and caused extensive damage done to agricultural infrastructure.`
   }
 
     return data;
