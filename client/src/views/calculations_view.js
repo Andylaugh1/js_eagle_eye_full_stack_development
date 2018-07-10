@@ -33,9 +33,21 @@ CalculationsView.prototype.maxDeaths = function (dronesData) {
       maxDeaths += parseInt(drone.deaths_max)
   }
 })
+// console.log(maxDeaths);
   return parseInt(maxDeaths);
+
 };
 
+CalculationsView.prototype.injuriesTotal = function (dronesData) {
+  let injuriesTotal = 0;
+  dronesData.forEach((drone) => {
+    if ( ! isNaN(parseInt(drone.injuries))){
+      injuriesTotal += parseInt(drone.injuries)
+  }
+})
+  console.log(injuriesTotal);
+  return parseInt(injuriesTotal);
+};
 
 
 
