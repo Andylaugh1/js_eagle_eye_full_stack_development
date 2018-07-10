@@ -4,6 +4,7 @@ const DroneView = require("./views/drone_view.js");
 const GeneralInfoView = require("./views/general_info_view.js");
 const CountryInfoView = require("./views/country_info_view.js");
 const CalculationsView = require('./views/calculations_view.js');
+const ChartView = require('./views/chart_view.js');
 
 
 document.addEventListener('DOMContentLoaded', ()=> {
@@ -35,5 +36,9 @@ countryInfoView.bindEvents();
 const calculationsContainer = document.querySelector('div#calculations');
 const calculationsView = new CalculationsView(calculationsContainer);
 calculationsView.bindEvents();
+
+const chartContainer = document.querySelector('div#chartContainer')
+const chartView = new ChartView(chartContainer);
+chartView.render();
 
 })
