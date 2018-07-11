@@ -1,6 +1,6 @@
 const PubSub = require('../helpers/pub_sub.js')
 const Highcharts = require('highcharts');
-const CalculationsView = require('./calculations_view.js')
+const Calculations = require('../helpers/calculations.js')
 
 const ChartView = function (chartContainer) {
     this.chartContainer = chartContainer
