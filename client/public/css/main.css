@@ -1,7 +1,10 @@
 p{
-  font: sans-serif;
+  font-family: 'Roboto', sans-serif;;
 }
 
+h1, h2, h3 {
+  font-family: 'Black Ops One', cursive;
+}
 
 html, body, #myChart{
 height: 100%;

@@ -60,7 +60,7 @@ GlobeView.prototype.bindEvents = function () {
     const buttonClicked = event.target.value;
     this.clearMarkers();
     this.renderMarkers(droneData.strike);
-    this.myMap.setView([20, 55], 3.5);
+    this.myMap.setView([20, 56], 3.5);
   })
 
 };
@@ -68,7 +68,7 @@ GlobeView.prototype.bindEvents = function () {
 
 
 GlobeView.prototype.mapRender = function (droneData) {
-  this.myMap = L.map(this.container2).setView([20, 55], 3.5);
+  this.myMap = L.map(this.container2).setView([20, 56], 3.5);
   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
     attribution:
     'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
