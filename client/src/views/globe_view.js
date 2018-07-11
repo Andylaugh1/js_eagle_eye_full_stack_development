@@ -2,7 +2,8 @@ const Request = require('../helpers/request.js');
 const PubSub = require('../helpers/pub_sub.js');
 const Drones = require('../models/drones.js');
 const L = require('leaflet');
-const CountryInfoView = require('./country_info_view.js')
+const CountryInfoView = require('./country_info_view.js');
+const GeneralInfoView = require("./general_info_view.js");
 
 const GlobeView = function(container, container2){
   this.myMap = null;
@@ -61,6 +62,14 @@ GlobeView.prototype.bindEvents = function () {
     this.clearMarkers();
     this.renderMarkers(droneData.strike);
     this.myMap.setView([20, 56], 3.5);
+    const strikesDataContainer = document.querySelector('div#strikes-data');
+    strikesDataContainer.innerHTML = " ";
+    const countryInfoContainer = document.querySelector('div#country-info');
+    countryInfoContainer.innerHTML = " ";
+    const generalContainer = document.querySelector('div#general-info');
+    generalContainer.innerHTML = " ";
+    const generalInfoView = new GeneralInfoView(generalContainer);
+    generalInfoView.bindEvents();
   })
 
 };
