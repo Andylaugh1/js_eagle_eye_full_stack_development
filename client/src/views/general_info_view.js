@@ -2,6 +2,8 @@ const GeneralInfoView = function(container){
   this.container = container;
 }
 
+
+
 GeneralInfoView.prototype.bindEvents = function () {
   this.render();
 };

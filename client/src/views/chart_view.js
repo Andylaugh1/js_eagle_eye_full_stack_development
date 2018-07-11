@@ -10,7 +10,12 @@ ChartView.prototype.render = function () {
 
     Highcharts.chart(this.chartContainer, {
         chart: {
-            type: 'bar'
+            width: 1500,
+            type: 'bar',
+            backgroundColor: '#D8CBB9',
+            borderColor: '#918E8B',
+            borderRadius: 20,
+            borderWidth: 5
         },
         title: {
             text: 'Recorded Deaths of US Drone Strikes in Pakistan, Somalia and Yemen'
@@ -23,9 +28,13 @@ ChartView.prototype.render = function () {
                 text: 'Recorded Deaths'
             }
         },
-        series: [{
+        series: [
+          {
+            name: 'Death',
+            color: '#000000',
             data: [4032, 598, 187 ]
-        }]
+          }
+        ]
     });
 };
 

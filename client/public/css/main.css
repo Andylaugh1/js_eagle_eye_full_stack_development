@@ -6,9 +6,20 @@ h1, h2, h3 {
   font-family: 'Black Ops One', cursive;
 }
 
-html, body, #myChart{
-height: 100%;
-width: 100%;
+h1 {
+  text-align: center;
+  font-size: 4rem;
+}
+
+#chartContainer {
+  margin-top: 10px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+#year {
+  margin-top: -1px;
+  margin-left: -10px;
 }
 
 body {
@@ -23,11 +34,15 @@ body {
 .col {
   flex: 1;
   margin: 25px;
+  border: 4px solid #9C9996;
+  border-radius: 15px;
+  margin-right: 20px;
+   background: linear-gradient(#B6B9BF, #B0A9A6)
 }
 
 .mapCol {
   flex: 2;
-  margin-right: 50px;
+  border-right: 50px;
 }
 
 .controls {
@@ -36,22 +51,34 @@ body {
 }
 
 .controls-col {
+  margin-top: 1rem;
   flex: 1;
-}
-
-#country-info{
-  padding: 50px, 0px;
 }
 
 #mapid {
   height: 600px;
   width: 1200px;
   border: 10px;
+
 }
 
-#strike-data{
-  /* position: fixed;
-  align-self: flex-end;
-  word-wrap:break-word;
-  width: 50px; */
+#map-border {
+  border: 4px solid #9C9996;
+  border-radius: 5px;
+  margin-right: 20px;
+}
+
+#country-info{
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+#strikes-data{
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+#general-info{
+  padding-left: 25px;
+  padding-right: 25px;
 }

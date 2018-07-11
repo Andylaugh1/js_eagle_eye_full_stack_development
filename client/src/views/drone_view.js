@@ -13,7 +13,9 @@ DroneView.prototype.bindEvents = function () {
 
 
 DroneView.prototype.render = function (droneData) {
-  this.container.innerHTML = " ";
+    const generalContainer = document.querySelector('div#general-info');
+    generalContainer.innerHTML = " ";
+    this.container.innerHTML = " ";
     const heading = document.createElement('h2');
     const strikeTown = document.createElement('p');
     const strikeDate = document.createElement('p');
