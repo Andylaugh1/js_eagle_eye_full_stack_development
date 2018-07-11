@@ -60,6 +60,7 @@ GlobeView.prototype.bindEvents = function () {
     const buttonClicked = event.target.value;
     this.clearMarkers();
     this.renderMarkers(droneData.strike);
+    this.myMap.setView([20, 55], 3.5);
   })
 
 };
