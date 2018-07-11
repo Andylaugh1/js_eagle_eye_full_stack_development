@@ -17,9 +17,19 @@
   <body>
     <h1>Covert Drone Strikes</h1>
 
-    <div id="mapid"></div>
+  <div class="box">
+   <div class="col">
+    <div id='strikes-data'></div>
+    <div id="country-info"></div>
+    </div>
+    <div id="mapid" class="mapCol"></div>
+  </div>
 
-    <div id="slider-year">
+
+  <div class= "controls">
+    <div class="controls-col"></div>
+    <div class="controls-col"></div>
+    <div id="slider-year" class="controls-col">
      <input type="range" list="tickmarks" min="2002" max="2017" value="2002" class="slider" id="myRange">
      <datalist id="tickmarks">
      <option value="2002">
@@ -39,19 +49,22 @@
      <option value="2016">
      <option value="2017">
      </datalist>
-     <p>Year: <span id="demo"></span></p>
+
    </div>
 
-   <div id="dropdown">
+    <div class="controls-col"><p>Year: <span id="demo"></span></p></div>
+
+   <div id="dropdown" class="controls-col">
     <select id="filter-list">
     <option selcted disabled></option>
     </select>
     </div>
+    <div class="controls-col"></div>
+  </div>
 
-    <div id='strikes-data'></div>
+
     <div id="general-info"></div>
-    <div id="country-info"></div>
-    <div id="calculations"></div>
+    <!-- <div id="calculations"></div> -->
     <div id="chartContainer" style="width:100%; height:400px;"></div>
 
   </body>

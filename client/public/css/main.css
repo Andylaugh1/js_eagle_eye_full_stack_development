@@ -1,6 +1,3 @@
-#mapid { height: 500px;
-width: 900px;}
-
 p{
   font: sans-serif;
 }
@@ -9,4 +6,49 @@ p{
 html, body, #myChart{
 height: 100%;
 width: 100%;
+}
+
+body {
+  background-color: #ddd1c1;
+  color: black;
+}
+
+.box {
+  display: flex;
+}
+
+.col {
+  flex: 1;
+  margin: 25px;
+}
+
+.mapCol {
+  flex: 2;
+  margin-right: 50px;
+}
+
+.controls {
+  display: flex;
+
+}
+
+.controls-col {
+  flex: 1;
+}
+
+#country-info{
+  padding: 50px, 0px;
+}
+
+#mapid {
+  height: 600px;
+  width: 1200px;
+  border: 10px;
+}
+
+#strike-data{
+  /* position: fixed;
+  align-self: flex-end;
+  word-wrap:break-word;
+  width: 50px; */
 }
