@@ -3,7 +3,7 @@ const GlobeView = require('./views/globe_view.js');
 const DroneView = require("./views/drone_view.js");
 const GeneralInfoView = require("./views/general_info_view.js");
 const CountryInfoView = require("./views/country_info_view.js");
-const CalculationsView = require('./views/calculations_view.js');
+const Calculations = require('./helpers/calculations.js');
 const ChartView = require('./views/chart_view.js');
 
 
@@ -33,9 +33,9 @@ const countryInfoView = new CountryInfoView(countryContainer);
 countryInfoView.bindEvents();
 
 
-const calculationsContainer = document.querySelector('div#calculations');
-const calculationsView = new CalculationsView(calculationsContainer);
-calculationsView.bindEvents();
+// const calculationsContainer = document.querySelector('div#calculations');
+// const calculationsView = new CalculationsView(calculationsContainer);
+// calculationsView.bindEvents();
 
 const chartContainer = document.querySelector('div#chartContainer')
 const chartView = new ChartView(chartContainer);

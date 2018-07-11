@@ -49,7 +49,6 @@ GlobeView.prototype.bindEvents = function () {
 
   this.button.addEventListener('click', (event) => {
     const buttonClicked = event.target.value;
-    console.log(event.target);
     this.clearMarkers();
     this.renderMarkers(droneData.strike);
   })
