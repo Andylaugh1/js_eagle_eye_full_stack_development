@@ -45,6 +45,15 @@ GlobeView.prototype.bindEvents = function () {
     const data = droneData.strike;
     const newData = data.filter(drone => drone.country === countryName);
     this.renderMarkers(newData);
+    if (countryName === "Pakistan"){
+      this.myMap.setView([33, 69], 5.5)
+    }
+    else if (countryName === "Somalia") {
+      this.myMap.setView([2.5, 43], 6)
+    }
+    else if (countryName === "Yemen") {
+      this.myMap.setView([15.3, 47.2], 6.5)
+    }
   })
 
   this.button.addEventListener('click', (event) => {
