@@ -21,7 +21,7 @@ ChartView.prototype.render = function () {
             text: 'Recorded Deaths of US Drone Strikes in Pakistan, Somalia and Yemen'
         },
         xAxis: {
-            categories: ['Average Combatants' , ' Civilian', 'Children']
+            categories: ['Combatants' , ' Civilian', 'Children']
         },
         yAxis: {
             title: {
