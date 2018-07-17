@@ -17,3 +17,18 @@ Users should be able to click on map and find out the drone data from that area.
 * Make use of API’s
    * https://api.dronestre.am/data
 * Have some interactivity that enables a user to move through different sections of content
+
+How to open and run this project:
+
+From terminal run the following commands:
+- Npm install
+- Npm run Build
+- Npm run server:dev
+- mongod
+- Open the project in editor
+- http://localhost:3000/
+
+Possible improvements in future or time permitting:
+- Code refactor and clean up (movement of logic into models)
+- Switch to REACT
+- Add more chart features
